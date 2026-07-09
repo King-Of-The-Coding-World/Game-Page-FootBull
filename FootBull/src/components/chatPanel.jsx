@@ -1,4 +1,5 @@
 import React from 'react'
+import "./chatPanel.css"
 
 const chatPanel = () => {
   return (
