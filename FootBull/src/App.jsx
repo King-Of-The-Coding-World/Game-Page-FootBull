@@ -1,8 +1,9 @@
 import { useState } from "react";
 import NavBar from "./components/NavBar";
-import scorePanel from "./components/scorePanel";
-import chatPanel from "./components/chatPanel";
-import "./App.css"
+import Trending from "./components/Trending";
+import Dashboard from "./components/Dashboard";
+import Moments from "./components/Moments";
+import "./App.css";
 
 function App() {
   const [team1, setTeam1] = useState();
@@ -10,8 +11,9 @@ function App() {
   return (
     <>
       <NavBar />
-      <scorePanel />
-      <chatPanel />
+      <Dashboard />
+      <Moments />
+      <Trending />
     </>
   );
 }
