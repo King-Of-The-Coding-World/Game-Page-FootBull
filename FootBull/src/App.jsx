@@ -1,8 +1,8 @@
 import { useState } from "react";
 import NavBar from "./components/NavBar";
-import Trending from "./components/Trending";
-import Dashboard from "./components/Dashboard";
-import Moments from "./components/Moments";
+import Community from "./components/Community";
+import ScoreBoard from "./components/ScoreBoard";
+import Blog from "./components/Blog";
 import "./App.css";
 
 function App() {
@@ -11,9 +11,17 @@ function App() {
   return (
     <>
       <NavBar />
-      <Dashboard />
-      <Moments />
-      <Trending />
+      <div id="live">
+        <ScoreBoard />
+      </div>
+
+      <div className="blog">
+        <Blog />
+      </div>
+
+      <div className="community">
+        <Community />
+      </div>
     </>
   );
 }

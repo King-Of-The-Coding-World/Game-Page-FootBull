@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Moments.css"
+import "./Blog.css"
 
 const Moments = () => {
   return (

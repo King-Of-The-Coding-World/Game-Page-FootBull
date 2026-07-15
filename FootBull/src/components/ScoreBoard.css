@@ -1,0 +1,226 @@
+#root {
+  --border-color: #27f0e5;
+  --dashboard-bg-color: #071214;
+  --league-text-color: #35d6d6;
+  --league-text-shadow-color: #35d6d6;
+  --teamNamePanel-border-color: #1f7f87;
+  --team1Name-color: #1f4f5b;
+  --team1Score-color: #35d6d6;
+  --team1Name-bg-color: #45c5c9;
+  --divider-bg-color: #101a1c;
+  --divider-color: white;
+  --team2Name-color: #dceeef;
+  --team2Score-color: #ff5a5f;
+  --team2Name-bg-color: #2a7d80;
+  --footballAnimLength: 300px;
+}
+
+.containerDashboard {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.border1 {
+  margin-top: 10px;
+  width: 50vw;
+  border: 2px solid var(--dashboard-bg-color);
+  border-radius: 10px;
+  background-color: var(--dashboard-bg-color);
+  animation: border1Anim 1100ms linear alternate-reverse infinite;
+}
+
+.border2 {
+  margin: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--dashboard-bg-color);
+  animation: border2Anim 1100ms linear alternate-reverse infinite;
+}
+
+.Dashboard {
+  margin: 10px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  border-radius: 10px;
+  border: 2px solid var(--dashboard-bg-color);
+  animation: DashBorderAnim 1100ms linear alternate-reverse infinite;
+}
+
+.league {
+  text-align: center;
+  grid-column: 1/4;
+  padding: 20px 0px 20px 0px;
+  color: var(--league-text-color);
+  text-shadow: 0px 0px 20px var(--league-text-shadow-color);
+  font-family: "JetBrains Mono";
+}
+
+.teamNamePanel {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 2px solid var(--teamNamePanel-border-color);
+  border-radius: 10px;
+  margin: 20px 0px 20px 0px;
+}
+
+.team1Name {
+  grid-column: 1/2;
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  color: var(--team1Name-color);
+  background-color: var(--team1Name-bg-color);
+  font-family: "JetBrains Mono";
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.divider {
+  grid-column: 2/3;
+  background-color: var(--divider-bg-color);
+  text-align: center;
+  align-content: center;
+  font-family: "Tourney";
+  font-size: 40px;
+  color: var(--divider-color);
+}
+
+.team2Name {
+  grid-column: 3/4;
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  color: var(--team2Name-color);
+  background-color: var(--team2Name-bg-color);
+  font-family: "JetBrains Mono";
+}
+
+.team1Logo {
+  grid-column: 1/2;
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  align-self: flex-end;
+  justify-self: center;
+}
+
+.team2Logo {
+  grid-column: 3/4;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.score {
+  grid-column: 2/3;
+  text-align: center;
+  align-content: center;
+  font-family: "JetBrains Mono";
+  font-size: 60px;
+  color: white;
+}
+
+.team1Score {
+  color: var(--team1Score-color);
+  font-weight: bold;
+}
+
+.team2Score {
+  color: var(--team2Score-color);
+  font-weight: bold;
+}
+
+.footballAnimContainer {
+  grid-column: 1/4;
+  justify-self: center;
+  height: 250px;
+  width: 700px;
+  position: relative;
+}
+
+.movingFootBall {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  bottom: 0;
+  left: 0;
+  animation: ballPath 4s linear infinite;
+}
+
+/* football animation @keyframes */
+@keyframes ballPath {
+  /* Phase 1: straight left to right */
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateX(600px) translateY(0) rotate(360deg);
+  }
+
+  /* Phase 2: semicircle anti-clockwise */
+  75% {
+    transform: translateX(300px) translateY(-200px) rotate(540deg);
+  }
+
+  100% {
+    transform: translateX(0) translateY(0) rotate(720deg);
+  }
+}
+
+/* Border Animation @keyframes*/
+@keyframes border1Anim {
+  0% {
+    border: 2px solid var(--dashboard-bg-color);
+  }
+
+  9.09% {
+    border: 2px solid var(--border-color);
+    box-shadow: inset 0px 0px 9px 0px var(--border-color);
+  }
+
+  100% {
+    border: 2px solid var(--border-color);
+    box-shadow: inset 0px 0px 9px 0px var(--border-color);
+  }
+}
+
+@keyframes border2Anim {
+  0% {
+    border: 2px solid var(--dashboard-bg-color);
+  }
+
+  54.54% {
+    border: 2px solid var(--dashboard-bg-color);
+  }
+
+  63.63% {
+    border: 2px solid var(--border-color);
+    box-shadow: inset 0px 0px 9px 0px var(--border-color);
+  }
+
+  100% {
+    border: 2px solid var(--border-color);
+    box-shadow: inset 0px 0px 9px 0px var(--border-color);
+  }
+}
+
+@keyframes DashBorderAnim {
+  0% {
+    border: 2px solid var(--dashboard-bg-color);
+  }
+
+  81.81% {
+    border: 2px solid var(--dashboard-bg-color);
+  }
+
+  90.9% {
+    border: 2px solid var(--dashboard-bg-color);
+  }
+
+  100% {
+    border: 2px solid var(--border-color);
+    box-shadow: inset 0px 0px 9px 0px var(--border-color);
+  }
+}
