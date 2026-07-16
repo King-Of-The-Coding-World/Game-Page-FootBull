@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // ✅ import Link
 import "./NavBar.css";
 
 const links = [
@@ -26,7 +27,7 @@ const NavBar = () => {
                 className="nav-item"
                 onClick={() => setActive(link.name)}
               >
-                <a href={`#${link.name.toLowerCase()}`}>
+                <Link to={link.path}>
                   {link.name === "LIVE" ? (
                     <div
                       style={{
@@ -56,7 +57,7 @@ const NavBar = () => {
                   ) : (
                     link.name
                   )}
-                </a>
+                </Link>
 
                 {isActive && (
                   <motion.div

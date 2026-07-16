@@ -12,38 +12,69 @@
   --team2Name-color: #dceeef;
   --team2Score-color: #ff5a5f;
   --team2Name-bg-color: #2a7d80;
+
+  --containerDashboardMarginTop: 20px;
+
+  --border1MarginTop: 10px;
+  --border1BorderRadius: 10px;
+
+  --border2Margin: 10px;
+  --border2BorderRadius: 10px;
+
+  --scoreBoardMargin: 10px;
+  --scoreBoardPadding: 20px;
+  --scoreBoardBorderRadius: 10px;
+
+  --leagueFontSize: 25px;
+
+  --teamPanelTopMargin: 30px;
+  --teamPanelBottomMargin: 20px;
+  --teamPanelBorderRadius: 10px;
+
+  --team1NameTopPadding: 5px;
+  --team1NameBottomPadding: 5px;
+  --team1NameFontSize: 18px;
+  --team1NameBorderRadius: 5px;
+
+  --dividerFontSize: 22px;
+
+  --team2NameTopPadding: 5px;
+  --team2NameBottomPadding: 5px;
+  --team2NameFontSize: 18px;
+
+  --dashboardWidth: 40vw;
   --footballAnimLength: 300px;
 }
 
 .containerDashboard {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: var(--containerDashboardMarginTop);
 }
 
 .border1 {
-  margin-top: 10px;
-  width: 50vw;
+  margin-top: var(--border1MarginTop);
+  width: var(--dashboardWidth);
   border: 2px solid var(--dashboard-bg-color);
-  border-radius: 10px;
+  border-radius: var(--border1BorderRadius);
   background-color: var(--dashboard-bg-color);
   animation: border1Anim 1100ms linear alternate-reverse infinite;
 }
 
 .border2 {
-  margin: 10px;
-  border-radius: 10px;
+  margin: var(--border2Margin);
+  border-radius: var(--border2BorderRadius);
   border: 2px solid var(--dashboard-bg-color);
   animation: border2Anim 1100ms linear alternate-reverse infinite;
 }
 
-.Dashboard {
-  margin: 10px;
-  padding: 20px;
+.ScoreBoard {
+  margin: var(--scoreBoardMargin);
+  padding: var(--scoreBoardPadding);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto auto auto;
-  border-radius: 10px;
+  border-radius: var(--scoreBoardBorderRadius);
   border: 2px solid var(--dashboard-bg-color);
   animation: DashBorderAnim 1100ms linear alternate-reverse infinite;
 }
@@ -55,6 +86,7 @@
   color: var(--league-text-color);
   text-shadow: 0px 0px 20px var(--league-text-shadow-color);
   font-family: "JetBrains Mono";
+  font-size: var(--leagueFontSize);
 }
 
 .teamNamePanel {
@@ -62,19 +94,20 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   border: 2px solid var(--teamNamePanel-border-color);
-  border-radius: 10px;
-  margin: 20px 0px 20px 0px;
+  border-radius: var(--teamPanelBorderRadius);
+  margin: var(--teamPanelTopMargin) 0px var(--teamPanelBottomMargin) 0px;
 }
 
 .team1Name {
   grid-column: 1/2;
   text-align: center;
-  padding: 20px 0px 20px 0px;
+  padding: var(--team1NameTopPadding) 0px var(--team1NameBottomPadding) 0px;
   color: var(--team1Name-color);
   background-color: var(--team1Name-bg-color);
   font-family: "JetBrains Mono";
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  font-size: var(--team1NameFontSize);
+  border-top-left-radius: var(--team1NameBorderRadius);
+  border-bottom-left-radius: var(--team1NameBorderRadius);
 }
 
 .divider {
@@ -83,17 +116,18 @@
   text-align: center;
   align-content: center;
   font-family: "Tourney";
-  font-size: 40px;
+  font-size: var(--dividerFontSize);
   color: var(--divider-color);
 }
 
 .team2Name {
   grid-column: 3/4;
   text-align: center;
-  padding: 20px 0px 20px 0px;
+  padding: var(--team2NameTopPadding) 0px var(--team2NameBottomPadding) 0px;
   color: var(--team2Name-color);
   background-color: var(--team2Name-bg-color);
   font-family: "JetBrains Mono";
+  font-size: var(--team2NameFontSize);
 }
 
 .team1Logo {
