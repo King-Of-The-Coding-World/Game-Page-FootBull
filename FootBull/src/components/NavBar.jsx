@@ -27,7 +27,7 @@ const NavBar = () => {
                 className="nav-item"
                 onClick={() => setActive(link.name)}
               >
-                <Link to={link.path}>
+                <Link to={link.path} className="nav-link">
                   {link.name === "LIVE" ? (
                     <div
                       style={{
@@ -41,9 +41,9 @@ const NavBar = () => {
                           width: "10px",
                           height: "10px",
                           borderRadius: "50%",
-                          backgroundColor: "#35d6d6",
+                          backgroundColor: "#ff7f11",
                           display: "inline-block",
-                          boxShadow: "0 0 8px #35d6d6",
+                          boxShadow: "0 0 8px #ff7f11",
                         }}
                         animate={{ opacity: [1, 0, 1] }}
                         transition={{
@@ -57,19 +57,19 @@ const NavBar = () => {
                   ) : (
                     link.name
                   )}
-                </Link>
 
-                {isActive && (
-                  <motion.div
-                    layoutId="underline"
-                    className="underline"
-                    transition={{
-                      type: "spring",
-                      stiffness: 450,
-                      damping: 35,
-                    }}
-                  />
-                )}
+                  {isActive && (
+                    <motion.div
+                      layoutId="underline"
+                      className="underline"
+                      transition={{
+                        type: "spring",
+                        stiffness: 450,
+                        damping: 35,
+                      }}
+                    />
+                  )}
+                </Link>
               </li>
             );
           })}

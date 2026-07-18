@@ -1,35 +1,72 @@
-#root {
-  --border-color: #27f0e5;
-  --dashboard-bg-color: #071214;
-  --league-text-color: #35d6d6;
-  --league-text-shadow-color: #35d6d6;
-  --teamNamePanel-border-color: #1f7f87;
-  --team1Name-color: #1f4f5b;
-  --team1Score-color: #35d6d6;
-  --team1Name-bg-color: #45c5c9;
-  --divider-bg-color: #101a1c;
-  --divider-color: white;
-  --team2Name-color: #dceeef;
-  --team2Score-color: #ff5a5f;
-  --team2Name-bg-color: #2a7d80;
+:root {
+  /* Core palette: white, neon orange, dark grey */
+  --border-color: #ff7f11;              /* neon orange border */
+  --scoreboard-bg-color: #1a1a1a;       /* dark grey background */
+  --league-text-color: #ffffff;         /* pure white text */
+  --league-text-shadow-color: none;  /* glowing orange shadow */
+  --teamNamePanel-border-color: #ff7f11;/* neon orange border */
 
-  --containerDashboardMarginTop: 20px;
+  /* Team colors */
+  --team1Name-color: #ffffff;           /* white text */
+  --team1Score-color: #ff7f11;          /* neon orange score */
+  --team1Name-bg-color: #2a2a2a;        /* dark grey panel */
 
-  --border1MarginTop: 10px;
-  --border1BorderRadius: 10px;
+  --divider-bg-color: #0d0d0d;          /* deep dark divider background */
+  --divider-color: #ff7f11;             /* neon orange divider text */
+
+  --team2Name-color: #ffffff;           /* white text */
+  --team2Score-color: #ff7f11;          /* neon orange score */
+  --team2Name-bg-color: #2a2a2a;        /* dark grey panel */
+
+  /* Dashboard sizing */
+  --containerDashboardMarginTop: 50px;
+
+  --infoMarginTop: 0;
+  --infoMarginRight: 10px;
+  --infoBorderRight: 2px solid #ffffff;
+
+  --infosBorderRadius: 5px;
+  --infosMarginBottom: 10px;
+
+  --dateWidth: 10vw;
+  --datePadding: 5px;
+  --dateFont: "JetBrains Mono";
+  --dateColor: #000000;                 /* neon orange date badge */
+  --date-bg-color: #ff7f11;
+  --dateFontSize: 18px;
+
+  --stadiumWidth: 8vw;
+  --stadiumPadding: 5px;
+  --stadiumFont: "JetBrains Mono";
+  --stadiumColor: #ffffff;
+  --stadium-bg-color: #000000;
+  --stadiumFontSize: 17px;
+
+  --refereeWidth: 6vw;
+  --refereePadding: 5px;
+  --refereeFont: "JetBrains Mono";
+  --refereeColor: #000000;
+  --referee-bg-color: #ffffff;
+  --refereeFontSize: 16px;
+
+  --border1MarginTop: 0;
+  --border1BorderRadius: 7px;
 
   --border2Margin: 10px;
-  --border2BorderRadius: 10px;
+  --border2BorderRadius: 7px;
+
+  --border3Margin: 10px;
+  --border3BorderRadius: 7px;
 
   --scoreBoardMargin: 10px;
-  --scoreBoardPadding: 20px;
-  --scoreBoardBorderRadius: 10px;
+  --scoreBoardPadding: 10px;
+  --scoreBoardBorderRadius: 7px;
 
   --leagueFontSize: 25px;
 
   --teamPanelTopMargin: 30px;
   --teamPanelBottomMargin: 20px;
-  --teamPanelBorderRadius: 10px;
+  --teamPanelBorderRadius: 7px;
 
   --team1NameTopPadding: 5px;
   --team1NameBottomPadding: 5px;
@@ -42,9 +79,20 @@
   --team2NameBottomPadding: 5px;
   --team2NameFontSize: 18px;
 
-  --dashboardWidth: 40vw;
+  --scoreFontSize: 40px;
+
+  --dashboardWidth: 35vw;
+  --borderAnimBoxShadow: 2px;
+
   --footballAnimLength: 300px;
+  --footballAnimHeight: 250px;
+
+  --gameResultFont: "Tourney";
+  --gameResultFontSize: 30px;
+  --gameResultFontColor: #39FF14;
+  --gameResultHeight: 100px;
 }
+
 
 .containerDashboard {
   display: flex;
@@ -52,31 +100,86 @@
   margin-top: var(--containerDashboardMarginTop);
 }
 
+.info {
+  margin-top: var(--infoMarginTop);
+  margin-right: var(--infoMarginRight);
+  border-right: var(--infoBorderRight);
+}
+
+.date {
+  width: var(--dateWidth);
+  padding: var(--datePadding);
+  margin-bottom: var(--infosMarginBottom);
+  border-top-left-radius: var(--infosBorderRadius);
+  border-bottom-left-radius: var(--infosBorderRadius);
+  color: var(--dateColor);
+  background-color: var(--date-bg-color);
+  font-family: var(--dateFont);
+  font-size: var(--dateFontSize);
+  justify-self: end;
+}
+
+.stadium {
+  width: var(--stadiumWidth);
+  padding: var(--stadiumPadding);
+  margin-bottom: var(--infosMarginBottom);
+  border: 1px solid #ffffff;
+  border-top-left-radius: var(--infosBorderRadius);
+  border-bottom-left-radius: var(--infosBorderRadius);
+  background-color: var(--stadium-bg-color);
+  font-family: var(--stadiumFont);
+  font-size: var(--stadiumFontSize);
+  color: var(--stadiumColor);
+  justify-self: end;
+}
+
+.referee {
+  width: var(--refereeWidth);
+  padding: var(--refereePadding);
+  margin-bottom: var(--infosMarginBottom);
+  border-top-left-radius: var(--infosBorderRadius);
+  border-bottom-left-radius: var(--infosBorderRadius);
+  background-color: var(--referee-bg-color);
+  font-family: var(--refereeFont);
+  font-size: var(--refereeFontSize);
+  color: var(--refereeColor);
+  justify-self: end;
+}
+
 .border1 {
   margin-top: var(--border1MarginTop);
   width: var(--dashboardWidth);
-  border: 2px solid var(--dashboard-bg-color);
+  border: 2px solid var(--border-color);
+  box-shadow: inset 0px 0px var(--borderAnimBoxShadow) 0px var(--border-color);
   border-radius: var(--border1BorderRadius);
-  background-color: var(--dashboard-bg-color);
+  background-color: var(--scoreboard-bg-color);
   animation: border1Anim 1100ms linear alternate-reverse infinite;
 }
 
 .border2 {
   margin: var(--border2Margin);
   border-radius: var(--border2BorderRadius);
-  border: 2px solid var(--dashboard-bg-color);
+  border: 2px solid var(--scoreboard-bg-color);
   animation: border2Anim 1100ms linear alternate-reverse infinite;
+}
+
+.border3 {
+  margin: var(--border3Margin);
+  border-radius: var(--border3BorderRadius);
+  border: 2px solid var(--scoreboard-bg-color);
+  animation: border3Anim 1100ms linear alternate-reverse infinite;
 }
 
 .ScoreBoard {
   margin: var(--scoreBoardMargin);
   padding: var(--scoreBoardPadding);
   display: grid;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto auto auto;
   border-radius: var(--scoreBoardBorderRadius);
-  border: 2px solid var(--dashboard-bg-color);
-  animation: DashBorderAnim 1100ms linear alternate-reverse infinite;
 }
 
 .league {
@@ -151,7 +254,7 @@
   text-align: center;
   align-content: center;
   font-family: "JetBrains Mono";
-  font-size: 60px;
+  font-size: var(--scoreFontSize);
   color: white;
 }
 
@@ -168,8 +271,8 @@
 .footballAnimContainer {
   grid-column: 1/4;
   justify-self: center;
-  height: 250px;
-  width: 700px;
+  height: var(--footballAnimHeight);
+  width: 100%;
   position: relative;
 }
 
@@ -182,7 +285,21 @@
   animation: ballPath 4s linear infinite;
 }
 
+.gameResult {
+  grid-column: 1/4;
+  height: var(--gameResultHeight);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-family: var(--gameResultFont);
+  font-size: var(--gameResultFontSize);
+  color: var(--gameResultFontColor);
+}
+
 /* football animation @keyframes */
+
+/* IMPORTANT: Here 80px is border2margin + border3margin + scoreboardMargin + scoreboardPadding */
 @keyframes ballPath {
   /* Phase 1: straight left to right */
   0% {
@@ -190,12 +307,14 @@
   }
 
   50% {
-    transform: translateX(600px) translateY(0) rotate(360deg);
+    transform: translateX(calc(var(--dashboardWidth) - 80px - 100%))
+      translateY(0) rotate(360deg);
   }
 
   /* Phase 2: semicircle anti-clockwise */
   75% {
-    transform: translateX(300px) translateY(-200px) rotate(540deg);
+    transform: translateX(calc((var(--dashboardWidth) - 80px) / 2 - 50%))
+      translateY(calc((-1 * var(--footballAnimHeight)) + 100%)) rotate(540deg);
   }
 
   100% {
@@ -206,55 +325,76 @@
 /* Border Animation @keyframes*/
 @keyframes border1Anim {
   0% {
-    border: 2px solid var(--dashboard-bg-color);
+    border: 2px solid var(--scoreboard-bg-color);
   }
 
   9.09% {
     border: 2px solid var(--border-color);
-    box-shadow: inset 0px 0px 9px 0px var(--border-color);
+    box-shadow: inset 0px 0px var(--borderAnimBoxShadow) 0px var(--border-color);
   }
 
   100% {
     border: 2px solid var(--border-color);
-    box-shadow: inset 0px 0px 9px 0px var(--border-color);
+    box-shadow: inset 0px 0px var(--borderAnimBoxShadow) 0px var(--border-color);
   }
 }
 
 @keyframes border2Anim {
   0% {
-    border: 2px solid var(--dashboard-bg-color);
+    border: 2px solid var(--scoreboard-bg-color);
   }
 
   54.54% {
-    border: 2px solid var(--dashboard-bg-color);
+    border: 2px solid var(--scoreboard-bg-color);
   }
 
   63.63% {
     border: 2px solid var(--border-color);
-    box-shadow: inset 0px 0px 9px 0px var(--border-color);
+    box-shadow: inset 0px 0px var(--borderAnimBoxShadow) 0px var(--border-color);
   }
 
   100% {
     border: 2px solid var(--border-color);
-    box-shadow: inset 0px 0px 9px 0px var(--border-color);
+    box-shadow: inset 0px 0px var(--borderAnimBoxShadow) 0px var(--border-color);
   }
 }
 
-@keyframes DashBorderAnim {
+@keyframes border3Anim {
   0% {
-    border: 2px solid var(--dashboard-bg-color);
+    border: 2px solid var(--scoreboard-bg-color);
   }
 
   81.81% {
-    border: 2px solid var(--dashboard-bg-color);
+    border: 2px solid var(--scoreboard-bg-color);
   }
 
   90.9% {
-    border: 2px solid var(--dashboard-bg-color);
+    border: 2px solid var(--scoreboard-bg-color);
   }
 
   100% {
     border: 2px solid var(--border-color);
-    box-shadow: inset 0px 0px 9px 0px var(--border-color);
+    box-shadow: inset 0px 0px var(--borderAnimBoxShadow) 0px var(--border-color);
   }
+}
+
+
+/* Animation Stopper */
+.no-anim {
+  animation: none !important; /* Removes animation */
+}
+
+.no-football-anim {
+  display: none !important;
+}
+
+/* winStatus Remover */
+.no-status {
+  display: none !important;
+}
+
+/* draw styling */
+.drawStyle {
+  color: #969090;
+  font-size: 50px;
 }
