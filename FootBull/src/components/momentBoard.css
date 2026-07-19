@@ -14,7 +14,7 @@
   --font-body: "JetBrains Mono", monospace;
 
   /* Spacing & sizing */
-  --board-bottom-margin: 0px;
+  --board-top-margin: 0px;
   --board-width: 420px;
   --board-radius: 7px;
   --tab-radius: 10px;
@@ -28,6 +28,13 @@
   --reaction-gap: 10px;
   --reaction-font-size: 16px;
   --reaction-count-size: 12px;
+
+  /* Description */
+  --description-font-size: 13px;
+  --description-color: #cccccc;
+
+  /* Scroll */
+  --list-max-height: 100%;
 }
 
 .moment-board {
@@ -35,9 +42,9 @@
   background: linear-gradient(180deg, #141414 0%, #1e1e1e 100%);
   color: var(--color-text);
   width: var(--board-width);
-  margin-bottom: var(--board-bottom-margin);
+  margin-top: var(--board-top-margin);
   border-radius: var(--board-radius);
-  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0px 7px rgba(0, 0, 0, 0.5);
   padding: var(--padding-board);
   display: flex;
   flex-direction: column;
@@ -92,6 +99,13 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  max-height: var(--list-max-height);
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.moment-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
 .moment-item {
@@ -100,12 +114,27 @@
   border-radius: var(--card-radius);
   font-size: 15px;
   font-weight: 500;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.3s ease;
 }
 
 .moment-item:hover {
   transform: translateY(-2px);
   background-color: var(--color-bg-hover);
+}
+
+.moment-title-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.moment-description {
+  font-size: var(--description-font-size);
+  color: var(--description-color);
+  margin-bottom: 8px;
 }
 
 /* Reaction system */
@@ -132,7 +161,9 @@
   cursor: pointer;
   font-size: var(--reaction-font-size);
   color: var(--color-text);
-  transition: transform 0.2s ease, color 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    color 0.3s ease;
 }
 
 .reaction-buttons button:hover {
@@ -175,7 +206,9 @@
   font-size: 15px;
   color: var(--color-bg-dark);
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .moment-form button:hover {

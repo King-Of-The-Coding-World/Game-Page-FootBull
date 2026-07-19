@@ -36,7 +36,7 @@ function App() {
           path="/live"
           element={
             <div>
-              <div className="flex gap-[20px] mb-[50px] justify-center">
+              <div className="flex gap-[20px] mb-[50px] justify-center max-h-full">
                 <ScoreBoard
                   date="July 19, 2026"
                   stadium="Acrisure"
@@ -53,7 +53,28 @@ function App() {
                   disableFootballAnim={false}
                   draw={false}
                 />
-                <MomentBoard />
+                <MomentBoard
+                  trendingTexts={[
+                    "🔥 City’s 78’ Goal",
+                    "🚨 Madrid Red Card",
+                    "⚡ Haaland’s Dribble",
+                  ]}
+                  trendingDescrip={[
+                    "Lewandowski equalizes with a thunderous strike, sending Etihad into chaos.",
+                    "A reckless challenge leaves Los Blancos down to 10 men.",
+                    "Haaland beats two defenders with raw pace and power, igniting the crowd.",
+                  ]}
+                  latestTexts={[
+                    "⏱ Kickoff at Acrisure",
+                    "🔔 Half-time whistle",
+                    "📸 Fans celebrating",
+                  ]}
+                  latestDescrip={[
+                    "The whistle blows, and the clash begins under floodlights.",
+                    "Both sides head to the tunnel with tension brewing.",
+                    "Supporters erupt in chants and flares after the equalizer.",
+                  ]}
+                />
               </div>
               <div className="flex gap-[20px] mb-[50px] justify-center">
                 <ScoreBoard
@@ -74,7 +95,28 @@ function App() {
                   draw={true}
                   specificCSSForLogo1="!w-full !h-full !self-center !justify-self-center"
                 />
-                <MomentBoard />
+                <MomentBoard
+                  trendingTexts={[
+                    "🔥 Lewandowski’s Equalizer",
+                    "👑 Griezmann’s Early Goal",
+                    "⚖️ Orsato’s Key Decision",
+                  ]}
+                  trendingDescrip={[
+                    "Barça striker smashes home at 65’, leveling the score.",
+                    "Atletico’s talisman silences Camp Nou with a clinical finish.",
+                    "Referee’s controversial call sparks heated protests from both benches.",
+                  ]}
+                  latestTexts={[
+                    "🎶 Camp Nou Crowd Chants",
+                    "⚔️ Midfield Battle",
+                    "📊 Draw Status (1–1, 65’) ",
+                  ]}
+                  latestDescrip={[
+                    "The stadium roars with synchronized chants as tension builds.",
+                    "Frenkie de Jong and Koke lock horns, dictating the tempo.",
+                    "Scoreboard shows 1–1 at 65 minutes, both sides pushing for a winner.",
+                  ]}
+                />
               </div>
               <div className="flex gap-[20px] mb-[50px] justify-center">
                 <ScoreBoard
@@ -95,44 +137,29 @@ function App() {
                   status="won by"
                   winBy="2 goals"
                 />
-                <MomentBoard />
+                <MomentBoard
+                  trendingTexts={[
+                    "⚽ Liverpool’s Opening Strike",
+                    "🔥 Salah Seals the Win",
+                    "📊 Final Result: Liverpool Victory",
+                  ]}
+                  trendingDescrip={[
+                    "The Reds take control early at Old Trafford, stunning the home crowd.",
+                    "Mohamed Salah’s decisive finish makes it 2–0, confirming Liverpool’s dominance.",
+                    "The scoreboard shows 0–2, with Liverpool winning by two clear goals under Michael Oliver’s officiating.",
+                  ]}
+                  latestTexts={[
+                    "⏱ Kickoff at Old Trafford",
+                    "🔔 Half-time Whistle",
+                    "📸 Fans Reacting to Defeat",
+                  ]}
+                  latestDescrip={[
+                    "The whistle blows and the clash begins under the lights, with fans roaring from the stands.",
+                    "United trail 0–1 at the break, with Liverpool controlling possession and tempo.",
+                    "The home crowd grows restless as Liverpool extend their lead, while away supporters celebrate loudly.",
+                  ]}
+                />
               </div>
-
-              {/* <ScoreBoard
-                date="October 21, 2026"
-                stadium="Allianz Arena"
-                referee="Felix Brych"
-                league="Bundesliga"
-                team1="Bayern Munich"
-                minutes="88'"
-                team2="Borussia Dortmund"
-                team1Logo={BayernLogo}
-                team2Logo={DortmundLogo}
-                team1Score="3"
-                team2Score="2"
-                disableBorderAnim={true}
-                disableFootballAnim={true}
-                winTeam="Real Madrid"
-                winBy="2 goals"
-              />
-
-              <ScoreBoard
-                date="November 5, 2026"
-                stadium="Parc des Princes"
-                referee="Clément Turpin"
-                league="UEFA Europa League"
-                team1="Paris Saint-Germain"
-                minutes="74'"
-                team2="AC Milan"
-                team1Logo={PSGLogo}
-                team2Logo={MilanLogo}
-                team1Score="2"
-                team2Score="2"
-                disableBorderAnim={true}
-                disableFootballAnim={true}
-                winTeam="Real Madrid"
-                winBy="2 goals"
-              /> */}
             </div>
           }
         />

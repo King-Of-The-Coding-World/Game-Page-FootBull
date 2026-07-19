@@ -14,6 +14,7 @@ const NavBar = () => {
 
   return (
     <div className="containerNavbar">
+      <div className="inDev">&lt;In Development /&gt;</div>
       <nav>
         <h1 className="Logo">FootBull</h1>
 
@@ -75,6 +76,7 @@ const NavBar = () => {
           })}
         </ul>
       </nav>
+      <div className="inDev">&lt;In Development /&gt;</div>
     </div>
   );
 };
