@@ -1,0 +1,184 @@
+:root {
+  /* Colors */
+  --color-bg-dark: #141414; /* softened dark */
+  --color-bg-card: #1e1e1e;
+  --color-bg-hover: #2a2a2a;
+  --color-text: #ffffff;
+  --color-text-muted: #bbbbbb;
+  --color-highlight: #ff4c29; /* neon orange */
+  --color-highlight-hover: #ff7f50;
+  --color-reaction-hover: #ff6a3d;
+
+  /* Typography */
+  --font-title: "Tourney", sans-serif;
+  --font-body: "JetBrains Mono", monospace;
+
+  /* Spacing & sizing */
+  --board-bottom-margin: 0px;
+  --board-width: 420px;
+  --board-radius: 7px;
+  --tab-radius: 10px;
+  --card-radius: 8px;
+  --form-radius: 10px;
+  --padding-board: 24px;
+  --padding-card: 12px 16px;
+  --padding-form: 16px;
+
+  /* Reactions */
+  --reaction-gap: 10px;
+  --reaction-font-size: 16px;
+  --reaction-count-size: 12px;
+}
+
+.moment-board {
+  font-family: var(--font-body);
+  background: linear-gradient(180deg, #141414 0%, #1e1e1e 100%);
+  color: var(--color-text);
+  width: var(--board-width);
+  margin-bottom: var(--board-bottom-margin);
+  border-radius: var(--board-radius);
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+  padding: var(--padding-board);
+  display: flex;
+  flex-direction: column;
+}
+
+.moment-title {
+  font-family: var(--font-title);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: var(--color-text);
+}
+
+.moment-tabs {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 24px;
+}
+
+.moment-tab {
+  position: relative;
+  z-index: 10;
+  font-size: 16px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: var(--tab-radius);
+  transition: color 0.3s ease;
+  color: var(--color-text-muted);
+}
+
+.moment-tab.active {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.moment-highlight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: var(--tab-radius);
+  background-color: var(--color-highlight);
+  z-index: 5;
+}
+
+.moment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.moment-item {
+  background-color: var(--color-bg-card);
+  padding: var(--padding-card);
+  border-radius: var(--card-radius);
+  font-size: 15px;
+  font-weight: 500;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.moment-item:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-bg-hover);
+}
+
+/* Reaction system */
+.moment-reactions {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reaction-count {
+  font-size: var(--reaction-count-size);
+  color: var(--color-text-muted);
+}
+
+.reaction-buttons {
+  display: flex;
+  gap: var(--reaction-gap);
+}
+
+.reaction-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--reaction-font-size);
+  color: var(--color-text);
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.reaction-buttons button:hover {
+  transform: scale(1.2);
+  color: var(--color-reaction-hover);
+}
+
+/* Create form */
+.moment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--color-bg-card);
+  padding: var(--padding-form);
+  border-radius: var(--form-radius);
+}
+
+.moment-form input,
+.moment-form textarea {
+  background-color: var(--color-bg-hover);
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+.moment-form input::placeholder,
+.moment-form textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.moment-form button {
+  background-color: var(--color-highlight);
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-bg-dark);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.moment-form button:hover {
+  background-color: var(--color-highlight-hover);
+  transform: translateY(-2px);
+}

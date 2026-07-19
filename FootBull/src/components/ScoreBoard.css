@@ -19,7 +19,7 @@
   --team2Name-bg-color: #2a2a2a;        /* dark grey panel */
 
   /* Dashboard sizing */
-  --containerDashboardMarginTop: 50px;
+  --containerDashboardMarginBottom: 0px;
 
   --infoMarginTop: 0;
   --infoMarginRight: 10px;
@@ -97,7 +97,7 @@
 .containerDashboard {
   display: flex;
   justify-content: center;
-  margin-top: var(--containerDashboardMarginTop);
+  margin-bottom: var(--containerDashboardMarginBottom);
 }
 
 .info {
@@ -396,5 +396,4 @@
 /* draw styling */
 .drawStyle {
   color: #969090;
-  font-size: 50px;
 }
